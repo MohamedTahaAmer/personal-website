@@ -9,7 +9,11 @@ const config = {
 		"next/core-web-vitals",
 		"plugin:@typescript-eslint/recommended-type-checked",
 		"plugin:@typescript-eslint/stylistic-type-checked",
+		"next",
+		"prettier",
+		"plugin:tailwindcss/recommended",
 	],
+	ignorePatterns: ["/src/components/ui/*.tsx"],
 	rules: {
 		"@typescript-eslint/array-type": "off",
 		"@typescript-eslint/ban-ts-comment": "off",
@@ -28,6 +32,7 @@ const config = {
 			},
 		],
 		"@typescript-eslint/require-await": "off",
+		"prefer-const": "off",
 		"@typescript-eslint/no-misused-promises": [
 			"error",
 			{
