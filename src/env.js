@@ -5,8 +5,8 @@ import { z } from "zod"
 // @ts-expect-error
 export const env = createEnv({
 	server: {
-		DATABASE_URL: z.string().url(),
-		DATABASE_PREFIX: z.string().url(),
+		DATABASE_URL: z.string().url().min(1),
+		DATABASE_PREFIX: z.string().min(1),
 		NODE_ENV: z
 			.enum(["development", "test", "production"])
 			.default("development"),
