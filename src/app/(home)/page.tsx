@@ -1,3 +1,9 @@
+import Hero from "./_components/hero/hero"
+
 export default async function Home() {
-	return null
+	return (
+		<div className="">
+			<Hero />
+		</div>
+	)
 }

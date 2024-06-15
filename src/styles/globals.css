@@ -73,4 +73,13 @@
 	body {
 		@apply bg-background text-foreground;
 	}
+
+	.gradient-text {
+		background: linear-gradient(to bottom right, #a3e635, #facc15);
+		-webkit-background-clip: text; /* Safari and Chrome */
+		-moz-background-clip: text; /* Firefox */
+		background-clip: text; /* Standard */
+		-webkit-text-fill-color: transparent; /* Safari and Chrome */
+		-moz-text-fill-color: transparent; /* Firefox */
+	}
 }

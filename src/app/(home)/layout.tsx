@@ -13,7 +13,7 @@ export default function RootLayout({
 	children: React.ReactNode
 }) {
 	return (
-		<div className="pt-2">
+		<div className="mx-auto max-w-7xl pt-2">
 			<TRPCReactProvider>
 				<div className="fixed inset-x-0 top-2 z-10 w-full bg-background">
 					<Navbar />

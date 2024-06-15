@@ -1,5 +1,5 @@
 import Image from "next/image"
-import { Home, Linkedin, Twitter, Youtube } from "lucide-react"
+import { File, Home, Linkedin, Twitter, Youtube } from "lucide-react"
 import Link from "next/link"
 
 export const Logo = () => {
@@ -20,8 +20,11 @@ export const Logo = () => {
 					<p className="h-6 text-xl font-bold text-secondary">Mohamed Amer</p>
 				</Link>
 				<div className="flex h-6 gap-4 text-xs text-secondary-foreground ">
-					<Link href="/">
-						<Home className="size-5 duration-200 hover:scale-125 hover:text-secondary" />
+					<Link
+						href="https://utfs.io/f/85011049-2add-436e-9853-d1e9fecd1dc5-x8dvjg.pdf"
+						target="_blank"
+					>
+						<File className="size-5 duration-200 hover:scale-125 hover:text-secondary" />
 					</Link>
 					<Link href="/">
 						<Linkedin className="size-5 duration-200 hover:scale-125 hover:text-secondary" />{" "}
