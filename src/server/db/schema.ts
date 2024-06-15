@@ -9,7 +9,7 @@ import {
 	timestamp,
 	varchar,
 } from "drizzle-orm/pg-core"
-import { env } from "~/env"
+import { env } from "@/env"
 /**
  * This is an example of how to use the multi-project schema feature of Drizzle ORM. Use the same
  * database instance for multiple projects.
