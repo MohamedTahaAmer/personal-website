@@ -8,7 +8,7 @@ const HeroButtons = () => {
 			<Link
 				className={cn(
 					buttonVariants(),
-					"group/link relative z-20 bg-secondary px-10 text-2xl font-bold transition-all duration-500 hover:scale-110 hover:bg-transparent",
+					"group/link relative z-20 bg-secondary px-10 text-2xl font-bold transition-all duration-500 hover:scale-110 hover:bg-transparent max-sm:px-4",
 				)}
 				href="https://www.linkedin.com/in/mohamed-amer-66bb001b0/"
 				target="_blank"
@@ -19,7 +19,7 @@ const HeroButtons = () => {
 			<Link
 				className={cn(
 					buttonVariants(),
-					"group/link relative z-20 bg-secondary-foreground px-10 text-2xl font-bold transition-all duration-500 hover:scale-110 hover:bg-transparent",
+					"group/link relative z-20 bg-secondary-foreground px-10 text-2xl font-bold transition-all duration-500 hover:scale-110 hover:bg-transparent max-sm:px-4",
 				)}
 				href="https://utfs.io/f/85011049-2add-436e-9853-d1e9fecd1dc5-x8dvjg.pdf"
 				target="_blank"
