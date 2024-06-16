@@ -1,5 +1,5 @@
+import { File, Linkedin, Twitter, Youtube } from "lucide-react"
 import Image from "next/image"
-import { File, Home, Linkedin, Twitter, Youtube } from "lucide-react"
 import Link from "next/link"
 
 export const Logo = () => {
