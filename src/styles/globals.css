@@ -82,4 +82,28 @@
 		-webkit-text-fill-color: transparent; /* Safari and Chrome */
 		-moz-text-fill-color: transparent; /* Firefox */
 	}
+
+	.marquee {
+		width: 100%; /* Adjust as needed */
+		overflow: hidden;
+		position: relative;
+	}
+
+	.marquee-content {
+		display: flex;
+		animation: marquee 15s linear infinite;
+	}
+
+	.marquee:hover .marquee-content {
+		animation-play-state: paused;
+	}
+
+	@keyframes marquee {
+		0% {
+			transform: translateX(100%);
+		}
+		100% {
+			transform: translateX(-60%);
+		}
+	}
 }
