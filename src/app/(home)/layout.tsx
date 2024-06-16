@@ -13,13 +13,9 @@ export default function RootLayout({
 	children: React.ReactNode
 }) {
 	return (
-		<div className=" pt-2">
-			<TRPCReactProvider>
-				<div className="fixed inset-x-0 top-2 z-10 w-full bg-background">
-					<Navbar />
-				</div>
-				<div className="pt-14">{children}</div>
-			</TRPCReactProvider>
-		</div>
+		<TRPCReactProvider>
+			<Navbar />
+			<div className="pt-14">{children}</div>
+		</TRPCReactProvider>
 	)
 }

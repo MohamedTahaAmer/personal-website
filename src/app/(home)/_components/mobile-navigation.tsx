@@ -14,7 +14,10 @@ const MobileNavigation = () => {
 			<SheetTrigger>
 				<Menu className="size-6 text-secondary hover:scale-125" />
 			</SheetTrigger>
-			<SheetContent side="left" className="w-1/2 p-0 ">
+			<SheetContent
+				side="left"
+				className="w-2/3 bg-background/10 p-0 backdrop-blur-sm "
+			>
 				<SheetHeader>
 					<SheetDescription className="pt-24">
 						<NavigationLinks className="flex flex-col items-center space-y-4" />

@@ -1,6 +1,6 @@
 const HeroParagraph = () => {
 	return (
-		<p className="mt-4 max-w-xl text-xl leading-relaxed">
+		<p className="max-w-xl text-xl leading-relaxed">
 			I focus on{" "}
 			<span className="font-bold text-secondary-foreground">performance</span>{" "}
 			and{" "}
