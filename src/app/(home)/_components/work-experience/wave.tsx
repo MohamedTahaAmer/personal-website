@@ -6,8 +6,7 @@ const Wave = () => {
 				<div
 					className="wave waveTop"
 					style={{
-						backgroundImage:
-							"url('http://front-end-noobs.com/jecko/img/wave-top.png')",
+						backgroundImage: "url('/CSS/wave-top.png')",
 					}}
 				></div>
 			</div>
@@ -15,18 +14,15 @@ const Wave = () => {
 				<div
 					className="wave waveMiddle"
 					style={{
-						backgroundImage:
-							"url('http://front-end-noobs.com/jecko/img/wave-bot.png')",
+						backgroundImage: "url('/CSS/wave-bot.png')",
 					}}
 				></div>
 			</div>
 			<div className="waveWrapperInner bgBottom">
 				<div
 					className="wave waveBottom"
-					// style="background-image: url('http://front-end-noobs.com/jecko/img/wave-bot.png')"
 					style={{
-						backgroundImage:
-							"url('http://front-end-noobs.com/jecko/img/wave-bot.png')",
+						backgroundImage: "url('/CSS/wave-bot.png')",
 					}}
 				></div>
 			</div>

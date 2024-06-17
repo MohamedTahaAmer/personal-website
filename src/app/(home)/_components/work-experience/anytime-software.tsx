@@ -22,7 +22,7 @@ const AnyTimeSoftware = () => {
 						AnyTime Software
 					</div>
 					<div className="text-xl font-bold text-secondary-foreground/80">
-						May 2024 - July 2024
+						April 2024 - June 2024
 					</div>
 				</div>
 				<div className="col-span-2 text-xl">
@@ -41,9 +41,11 @@ const AnyTimeSoftware = () => {
 							<div className={techCss}>Next.JS</div>
 							<div className={techCss}>Node.JS</div>
 							<div className={techCss}>Nest.JS</div>
+							<div className={techCss}>MongoDB</div>
 							<div className={techCss}>Redux</div>
 							<div className={techCss}>Redux-ToolKit</div>
 							<div className={techCss}>React-flow</div>
+							<div className={techCss}>Material UI</div>
 							<div className={techCss}>Selenium</div>
 							<div className={techCss}>Jest</div>
 							<div className={techCss}>PlayWright</div>
@@ -51,6 +53,7 @@ const AnyTimeSoftware = () => {
 							<div className={techCss}>EC2</div>
 							<div className={techCss}>PM2</div>
 							<div className={techCss}>NginX</div>
+							<div className={techCss}>Github Actions</div>
 						</div>
 					</div>
 					<div className="pb-24">

@@ -1,4 +1,6 @@
 import AnyTimeSoftware from "./anytime-software"
+import Soltech from "./soltech"
+import Upwork from "./upwork"
 
 const WorkExperience = () => {
 	return (
@@ -13,7 +15,8 @@ const WorkExperience = () => {
 					<div className="absolute inset-x-0 top-1/2 z-0 grow border-t border-lime-400"></div>
 				</div>
 				<AnyTimeSoftware />
-				<AnyTimeSoftware />
+				<Soltech />
+				<Upwork />
 			</div>
 		</>
 	)
