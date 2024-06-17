@@ -54,5 +54,12 @@ const config = {
 			},
 		],
 	},
+	// https://github.com/francoismassart/eslint-plugin-tailwindcss/blob/master/README.md
+	// https://github.com/francoismassart/eslint-plugin-tailwindcss/blob/master/docs/rules/no-custom-classname.md#whitelist-default-
+	settings: {
+		tailwindcss: {
+			whitelist: ["^_.*"],
+		},
+	},
 }
 module.exports = config
