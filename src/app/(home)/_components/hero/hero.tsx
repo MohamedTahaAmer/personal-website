@@ -23,9 +23,9 @@ const Hero = () => {
 					<br className="max-sm:hidden" />
 					with more than two years of experience.
 				</h1>
-				<div className="relative w-fit pb-20 pr-16 max-sm:px-4 max-sm:pt-4 sm:ml-16 sm:pt-8 ">
+				<div className="relative w-fit pb-28 pr-16 max-sm:px-4 max-sm:pt-4 sm:ml-16 sm:pt-8 ">
 					<HeroParagraph />
-					<div className="absolute bottom-0 right-0 flex  gap-4 ">
+					<div className="absolute bottom-8 right-0 flex  gap-4 ">
 						<HeroButtons />
 					</div>
 				</div>

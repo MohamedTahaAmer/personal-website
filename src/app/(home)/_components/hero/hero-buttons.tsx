@@ -9,7 +9,7 @@ const HeroButtons = () => {
 			<Link
 				className={cn(
 					buttonVariants(),
-					"group/link relative z-20 bg-secondary px-10 text-2xl font-bold transition-all duration-500 hover:scale-110 hover:bg-transparent max-sm:px-4",
+					"group/link relative z-20  bg-secondary px-10 text-2xl font-bold transition-all duration-500 hover:scale-110 hover:bg-transparent max-sm:px-4",
 				)}
 				href="https://www.linkedin.com/in/mohamed-amer-66bb001b0/"
 				target="_blank"

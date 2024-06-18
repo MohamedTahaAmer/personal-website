@@ -1,23 +1,19 @@
-import AnyTimeSoftware from "./anytime-software"
-import Soltech from "./soltech"
-import Upwork from "./upwork"
+import TantaUniversity from "./tanta-university"
 
-const WorkExperience = () => {
+const Education = () => {
 	return (
 		<div className=" mt-40 ">
 			<div className="relative">
 				<div className="relative z-10 mx-auto w-fit bg-background px-4">
 					<div className="gradient-text mb-8  text-center text-5xl font-bold uppercase tracking-widest">
-						experience
+						education
 					</div>
 				</div>
 				<div className="absolute inset-x-0 top-1/2 z-0 grow border-t border-lime-400"></div>
 			</div>
-			<AnyTimeSoftware />
-			<Soltech />
-			<Upwork />
+      <TantaUniversity />
 		</div>
 	)
 }
 
-export default WorkExperience
+export default Education

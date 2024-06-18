@@ -57,7 +57,7 @@ const Upwork = () => {
 								demonstrating proficiency in cutting-edge paradigms of user
 								interface rendering such as Server-Side Rendering{" "}
 								<span className={boldTextCss}>(SSR),</span> Server-Side
-								Generation (<span className={boldTextCss}>SSG), </span>
+								Generation <span className={boldTextCss}>(SSG), </span>
 								Client-Side Rendering{" "}
 								<span className={boldTextCss}>(CSR),</span> Partial
 								Pre-Rendering <span className={boldTextCss}>(PPR),</span> and{" "}

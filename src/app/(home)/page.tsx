@@ -1,3 +1,4 @@
+import Education from "./_components/education/education"
 import Hero from "./_components/hero/hero"
 import WorkExperience from "./_components/work-experience/work-experience"
 
@@ -6,6 +7,7 @@ export default async function Home() {
 		<div className="">
 			<Hero />
 			<WorkExperience />
+			<Education />
 		</div>
 	)
 }
