@@ -7,7 +7,7 @@ const WorkExperience = () => {
 		<div className=" mt-40 ">
 			<div className="relative">
 				<div className="relative z-10 mx-auto w-fit bg-background px-4">
-					<div className="gradient-text mb-8  text-center text-5xl font-bold uppercase tracking-widest">
+					<div className="gradient-text mb-8 text-center text-5xl font-bold uppercase tracking-widest max-sm:text-3xl">
 						experience
 					</div>
 				</div>

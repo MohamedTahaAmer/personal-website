@@ -24,7 +24,7 @@ const Soltech = () => {
 					</div>
 				</div>
 				<div className="col-span-2 text-xl">
-					<div className=" text-3xl font-bold text-secondary-foreground decoration-secondary/40 underline-offset-4 max-sm:mb-2 max-sm:text-2xl max-sm:underline">
+					<div className=" text-3xl font-bold text-secondary-foreground decoration-secondary/40 underline-offset-4 max-sm:mb-2 max-sm:text-xl max-sm:underline">
 						&gt; Full Stack Web Developer
 					</div>
 					<div className="">
