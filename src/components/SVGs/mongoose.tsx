@@ -3,7 +3,7 @@ const Mongoose = (props: LucideProps) => {
 	return (
 		<svg {...props} viewBox="0 0 128 128">
 			<path
-				// style="fill:#850000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+				// style="fill:#850000;fillOpacity:1;fillRule:nonzero;stroke:none"
 				style={{
 					fill: "#850000",
 					fillOpacity: 1,
@@ -14,7 +14,7 @@ const Mongoose = (props: LucideProps) => {
 				transform="translate(-7.287 -32.362) scale(1.10979)"
 			></path>
 			<path
-				// style="fill:#850000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+				// style="fill:#850000;fillOpacity:1;fillRule:nonzero;stroke:none"
 				style={{
 					fill: "#850000",
 					fillOpacity: 1,
@@ -25,7 +25,7 @@ const Mongoose = (props: LucideProps) => {
 				transform="translate(-7.287 -32.362) scale(1.10979)"
 			></path>
 			<path
-				// style="fill:#850000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+				// style="fill:#850000;fillOpacity:1;fillRule:nonzero;stroke:none"
 				style={{
 					fill: "#850000",
 					fillOpacity: 1,

@@ -2,20 +2,30 @@
 
 import { Button } from "@/components/ui/button"
 import { Form } from "@/components/ui/form"
+import { api } from "@/trpc/react"
 import { zodResolver } from "@hookform/resolvers/zod"
 import { useForm, type UseFormReturn } from "react-hook-form"
+import { toast } from "sonner"
 import { z } from "zod"
 import FormInput from "./form-input"
 import TextAreaFormInput from "./form-text-area-input"
 
 const formSchema = z.object({
-	name: z.string().min(1, "Please enter your name"),
-	email: z.string().email(),
-	message: z.string().min(1, "Please enter a message"),
+	name: z
+		.string()
+		.min(1, "Please enter your name")
+		.max(256, "Name too long (max 256 characters)"),
+	email: z
+		.string()
+		.email()
+		.max(256, "Email too long (max 256 characters)")
+		.min(1, "Please enter your email"),
+	message: z
+		.string()
+		.min(1, "Please enter a message")
+		.max(4096, "Message too long (max 4096 characters)"),
 })
-
 export type formSchemaType = z.infer<typeof formSchema>
-
 export type Form = UseFormReturn<formSchemaType, undefined>
 
 export function GetInTouchForm() {
@@ -23,8 +33,18 @@ export function GetInTouchForm() {
 		resolver: zodResolver(formSchema),
 	})
 
+	let contactMe = api.contactMe.sendMessage.useMutation({
+		onSuccess: () => {
+			toast.success("Message sent successfully")
+			// form.reset()
+		},
+		onError: (error) => {
+			console.log(error.message)
+			toast.error(error.message)
+		},
+	})
 	function onSubmit(values: z.infer<typeof formSchema>) {
-		console.log(values)
+		contactMe.mutate(values)
 	}
 
 	return (

@@ -26,8 +26,9 @@ const config = {
 				fixStyle: "inline-type-imports",
 			},
 		],
+		"@typescript-eslint/no-non-null-asserted-optional-chain": "off",
 		"@typescript-eslint/no-unused-vars": [
-			"warn",
+			"off",
 			{
 				argsIgnorePattern: "^_",
 			},

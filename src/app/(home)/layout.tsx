@@ -1,3 +1,4 @@
+import MyToast from "@/components/my-toast"
 import { TRPCReactProvider } from "@/trpc/react"
 import Navbar from "./_components/Navbar"
 
@@ -16,6 +17,7 @@ export default function RootLayout({
 		<TRPCReactProvider>
 			<Navbar />
 			<div className="pt-[90px]">{children}</div>
+			<MyToast />
 		</TRPCReactProvider>
 	)
 }
