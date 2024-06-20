@@ -1,4 +1,5 @@
 import { buttonVariants } from "@/components/ui/button"
+import { cv_link } from "@/lib/constants"
 import { cn } from "@/lib/utils"
 import { Download, Linkedin } from "lucide-react"
 import Link from "next/link"
@@ -25,7 +26,7 @@ const HeroButtons = () => {
 					buttonVariants(),
 					"group/link relative z-20 bg-secondary-foreground px-10 text-2xl font-bold transition-all duration-500 hover:scale-110 hover:bg-transparent max-sm:px-4",
 				)}
-				href="https://utfs.io/f/85011049-2add-436e-9853-d1e9fecd1dc5-x8dvjg.pdf"
+				href={cv_link}
 				target="_blank"
 			>
 				<div className="z-20 bg-transparent pr-2 max-sm:text-lg">Show CV</div>
