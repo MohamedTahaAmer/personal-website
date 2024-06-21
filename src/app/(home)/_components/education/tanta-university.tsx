@@ -4,7 +4,7 @@ const TantaUniversity = () => {
 	let boldTextCss = "font-bold text-secondary-foreground/80"
 
 	return (
-		<div className="relative mt-12 overflow-hidden border-b pt-12 shadow-lg ">
+		<div className="relative overflow-hidden border-b pt-24 shadow-lg max-md:pt-4 ">
 			<div className=" relative z-10 mx-auto  grid max-w-7xl grid-cols-3 grid-rows-1 gap-y-8 px-8 max-lg:grid-cols-1 max-sm:p-2  max-sm:pl-4">
 				<div className="_title col-span-1 flex h-fit flex-col items-center">
 					<a href="https://eng.tanta.edu.eg/en/">

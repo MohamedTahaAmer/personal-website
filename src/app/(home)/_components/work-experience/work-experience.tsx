@@ -4,7 +4,7 @@ import Upwork from "./upwork"
 
 const WorkExperience = () => {
 	return (
-		<div className=" mt-40 ">
+		<div className=" pt-40 max-md:pt-0" id="work">
 			<div className="relative">
 				<div className="relative z-10 mx-auto w-fit bg-background px-4">
 					<div className="gradient-text mb-8 text-center text-5xl font-bold uppercase tracking-widest max-sm:text-3xl">

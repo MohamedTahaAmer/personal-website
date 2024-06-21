@@ -37,7 +37,7 @@ export const Logo = () => {
 						<Twitter className="size-5 duration-200 hover:scale-125 hover:text-secondary" />{" "}
 					</Link>
 
-					<Link href="/">
+					<Link href="/" className="hidden">
 						<Youtube className="size-5 duration-200 hover:scale-125 hover:text-secondary" />{" "}
 					</Link>
 				</div>
