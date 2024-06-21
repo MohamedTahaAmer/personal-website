@@ -31,6 +31,8 @@ export const createTRPCContext = async (opts: { headers: Headers }) => {
 	}
 }
 
+export type CTX = Awaited<ReturnType<typeof createTRPCContext>>
+
 /**
  * 2. INITIALIZATION
  *

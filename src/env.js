@@ -5,6 +5,10 @@ export const env = createEnv({
 	server: {
 		DATABASE_URL: z.string().url().min(1),
 		DATABASE_PREFIX: z.string().min(1),
+		GMAIL_APP_PASSWORD: z.string().min(1),
+		SMTP_GMAIL: z.string().min(1),
+		UPSTASH_REDIS_REST_URL: z.string().min(1),
+		UPSTASH_REDIS_REST_TOKEN: z.string().min(1),
 		NODE_ENV: z
 			.enum(["development", "test", "production"])
 			.default("development"),
@@ -17,6 +21,10 @@ export const env = createEnv({
 	runtimeEnv: {
 		DATABASE_URL: process.env.DATABASE_URL,
 		DATABASE_PREFIX: process.env.DATABASE_PREFIX,
+		UPSTASH_REDIS_REST_TOKEN: process.env.UPSTASH_REDIS_REST_TOKEN,
+		UPSTASH_REDIS_REST_URL: process.env.UPSTASH_REDIS_REST_URL,
+		GMAIL_APP_PASSWORD: process.env.GMAIL_APP_PASSWORD,
+		SMTP_GMAIL: process.env.SMTP_GMAIL,
 		NEXT_PUBLIC_CV_LINK: process.env.NEXT_PUBLIC_CV_LINK,
 		NODE_ENV: process.env.NODE_ENV,
 	},

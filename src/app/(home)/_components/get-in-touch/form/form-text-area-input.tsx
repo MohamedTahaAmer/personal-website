@@ -42,11 +42,7 @@ const TextAreaFormInput = ({
 						{label}
 					</FormLabel>
 					<FormControl>
-						<Textarea
-							placeholder={placholder}
-							{...field}
-							className="h-40 bg-transparent placeholder:text-transparent"
-						/>
+						<Textarea placeholder={placholder} {...field} className="h-40" />
 					</FormControl>
 					{description && <FormDescription>{description}</FormDescription>}
 					<FormMessage className="absolute -bottom-6 left-0 block pl-12  pt-2" />

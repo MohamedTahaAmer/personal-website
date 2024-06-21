@@ -46,7 +46,6 @@ const FormInput = ({
 
 					<FormControl>
 						<Input
-							className="bg-transparent placeholder:text-transparent"
 							type={type ? type : "text"}
 							placeholder={placeholder}
 							{...field}
