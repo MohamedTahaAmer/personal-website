@@ -4,12 +4,15 @@ import { Button } from "@/components/ui/button"
 import { Form } from "@/components/ui/form"
 import { api } from "@/trpc/react"
 import { zodResolver } from "@hookform/resolvers/zod"
+import { LoaderCircle } from "lucide-react"
+import { useState } from "react"
 import { useForm, type UseFormReturn } from "react-hook-form"
 import { toast } from "sonner"
 import { z } from "zod"
 import FormInput from "./form-input"
 import TextAreaFormInput from "./form-text-area-input"
 import "./input-chrome-reset.css"
+import { env } from "@/env"
 
 const formSchema = z.object({
 	name: z
@@ -30,18 +33,25 @@ export type formSchemaType = z.infer<typeof formSchema>
 export type Form = UseFormReturn<formSchemaType, undefined>
 
 export function GetInTouchForm() {
+	const [loading, setLoading] = useState(false)
 	const form = useForm<z.infer<typeof formSchema>>({
 		resolver: zodResolver(formSchema),
 	})
 
 	let contactMe = api.contactMe.sendMessage.useMutation({
+		onMutate: () => {
+			setLoading(true)
+		},
 		onSuccess: () => {
 			toast.success("Message sent successfully")
-			// form.reset()
+			env.NODE_ENV === "production" && form.reset()
 		},
 		onError: (error) => {
 			console.log(error.message)
 			toast.error(error.message)
+		},
+		onSettled: () => {
+			setLoading(false)
 		},
 	})
 	function onSubmit(values: z.infer<typeof formSchema>) {
@@ -59,11 +69,10 @@ export function GetInTouchForm() {
 				<TextAreaFormInput form={form} name="message" label="Message" />
 				<Button
 					type="submit"
-					className="group/link relative z-20 self-end  bg-secondary px-6 text-2xl font-bold transition-all duration-500 hover:scale-110 hover:bg-transparent max-sm:px-4"
+					className="flex gap-2 self-end bg-secondary font-bold text-background hover:bg-secondary-foreground "
 				>
 					<div className=" z-20 bg-transparent max-sm:text-lg">Send</div>
-
-					<span className="absolute left-0 top-0 z-10 block h-full w-0 rounded-lg bg-secondary-foreground transition-all duration-500 group-hover/link:w-full"></span>
+					{loading && <LoaderCircle className="size-4 animate-spin" />}
 				</Button>
 			</form>
 		</Form>
