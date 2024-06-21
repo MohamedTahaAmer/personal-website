@@ -9,6 +9,7 @@ import { toast } from "sonner"
 import { z } from "zod"
 import FormInput from "./form-input"
 import TextAreaFormInput from "./form-text-area-input"
+import "./input-chrome-reset.css"
 
 const formSchema = z.object({
 	name: z

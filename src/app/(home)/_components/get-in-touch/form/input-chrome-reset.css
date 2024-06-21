@@ -1,0 +1,23 @@
+/* - chrome changes the input background and text color by default, when you use the auto fill, so here we are controlling both the bg and text-color */
+/* https://stackoverflow.com/questions/2781549/removing-input-background-colour-for-chrome-autocomplete */
+/* Define a custom class for the autofill box-shadow */
+.custom-autofill-shadow {
+	@apply shadow-[inset_0_0_0_30px_hsl(222.2,84%,4.9%)];
+}
+
+/* Apply the custom class to the autofill pseudo-classes */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+	@apply custom-autofill-shadow;
+}
+
+.autofill-text-color {
+	-webkit-text-fill-color: hsl(210, 40%, 98%);
+}
+
+/* Apply the custom class to autofill pseudo-class */
+input:-webkit-autofill {
+	@apply autofill-text-color;
+}
