@@ -10,9 +10,14 @@ export const env = createEnv({
 			.default("development"),
 	},
 
+	client: {
+		NEXT_PUBLIC_CV_LINK: z.string().url().min(1),
+	},
+
 	runtimeEnv: {
 		DATABASE_URL: process.env.DATABASE_URL,
 		DATABASE_PREFIX: process.env.DATABASE_PREFIX,
+		NEXT_PUBLIC_CV_LINK: process.env.NEXT_PUBLIC_CV_LINK,
 		NODE_ENV: process.env.NODE_ENV,
 	},
 })

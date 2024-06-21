@@ -1,7 +1,9 @@
-import { cv_link } from "@/lib/constants"
+import { env } from "@/env"
 import { File, Linkedin, Twitter, Youtube } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
+
+import type { UrlObject } from "url"
 
 export const Logo = () => {
 	return (
@@ -21,7 +23,10 @@ export const Logo = () => {
 					<p className="h-6 text-xl font-bold text-secondary">Mohamed Amer</p>
 				</Link>
 				<div className="flex h-6 gap-4 text-xs text-secondary-foreground ">
-					<Link href={cv_link} target="_blank">
+					<Link
+						href={env.NEXT_PUBLIC_CV_LINK as unknown as UrlObject}
+						target="_blank"
+					>
 						<File className="size-5 duration-200 hover:scale-125 hover:text-secondary" />
 					</Link>
 					<Link href="/">

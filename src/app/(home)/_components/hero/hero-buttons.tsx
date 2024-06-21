@@ -1,8 +1,9 @@
 import { buttonVariants } from "@/components/ui/button"
-import { cv_link } from "@/lib/constants"
+import { env } from "@/env"
 import { cn } from "@/lib/utils"
 import { Download, Linkedin } from "lucide-react"
 import Link from "next/link"
+import type { UrlObject } from "url"
 
 const HeroButtons = () => {
 	return (
@@ -26,7 +27,7 @@ const HeroButtons = () => {
 					buttonVariants(),
 					"group/link relative z-20 bg-secondary-foreground px-10 text-2xl font-bold transition-all duration-500 hover:scale-110 hover:bg-transparent max-sm:px-4",
 				)}
-				href={cv_link}
+				href={env.NEXT_PUBLIC_CV_LINK as unknown as UrlObject}
 				target="_blank"
 			>
 				<div className="z-20 bg-transparent pr-2 max-sm:text-lg">Show CV</div>
