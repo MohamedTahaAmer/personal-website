@@ -7,7 +7,10 @@ import type { CTX } from "../../../trpc"
 import { TRPCError } from "@trpc/server"
 import { schema } from "@/server/db"
 import { eq, sql } from "drizzle-orm"
-import { MAX_NUMBER_OF_MESSAGES_PER_EMAIL } from "@/lib/constants"
+import {
+	ERROR_EMAIL_NOT_WORKING,
+	MAX_NUMBER_OF_MESSAGES_PER_EMAIL,
+} from "@/lib/constants"
 import { sendEmail, sendEmailToMe } from "@/lib/server/send-email/send-email"
 
 import { z } from "zod"
@@ -41,7 +44,10 @@ export async function sendMessage({
 		let ipv6 = ctx.headers.get("x-forwarded-for") ?? "test"
 		const { success } = await ratelimit_10_per_10_M.limit(ipv6)
 		if (!success) {
-			console.log("\x1b[1;33m%s\x1b[1;36m", `Rate limit exceeded for ${ipv6}`)
+			console.log(
+				"\x1b[1;33m%s\x1b[1;36m",
+				`Endpoing Access Rate limit exceeded for ${ipv6}`,
+			)
 			throw new TRPCError({
 				code: "FORBIDDEN",
 				message: "You have sent too many messages, please try again later.",
@@ -62,24 +68,27 @@ export async function sendMessage({
 				.groupBy(senders.id)
 		)[0]
 
-		console.log(sender)
-
 		if (!sender) {
 			let { success } = await ratelimit_3_per_1_day.limit(
 				`${ipv6}+${input.email}`,
 			)
 			if (!success) {
+				console.log(
+					"\x1b[1;31m%s\x1b[1;36m",
+					`Same user tring the same non working email too more than 3 times in the same day`,
+				)
 				throw new TRPCError({
 					code: "FORBIDDEN",
 					message: "You have sent too many messages, please try again later.",
 				})
 			}
 
+			let messageId = ""
 			try {
-				await sendEmail({
+				messageId = await sendEmail({
 					senderName: input.name,
 					email: input.email,
-					subject: "Thanks you for reaching out!",
+					subject: "Thank you for reaching out!",
 				})
 			} catch (error) {
 				throw new TRPCError({
@@ -89,14 +98,23 @@ export async function sendMessage({
 			}
 
 			// await 300ms
-			await new Promise((resolve) => setTimeout(resolve, 300))
+			await new Promise((resolve) => setTimeout(resolve, 1500))
 
 			try {
-				await checkIfTheSenderEmailIsNotValid()
+				await checkIfTheSenderEmailIsNotValid(messageId)
 			} catch (error) {
+				if (
+					error instanceof Error &&
+					error.message === ERROR_EMAIL_NOT_WORKING
+				) {
+					throw new TRPCError({
+						code: "BAD_REQUEST",
+						message: "Please provide a working email address",
+					})
+				}
 				throw new TRPCError({
-					code: "BAD_REQUEST",
-					message: "Please provide a working email address",
+					code: "INTERNAL_SERVER_ERROR",
+					message: "Internal server error, please try again later.",
 				})
 			}
 

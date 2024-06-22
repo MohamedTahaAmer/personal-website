@@ -46,7 +46,6 @@ export function GetInTouchForm() {
 			form.reset()
 		},
 		onError: (error) => {
-			console.log(error.message)
 			toast.error(error.message)
 		},
 		onSettled: () => {
