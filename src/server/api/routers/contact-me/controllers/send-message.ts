@@ -11,6 +11,7 @@ import { MAX_NUMBER_OF_MESSAGES_PER_EMAIL } from "@/lib/constants"
 import { sendEmail, sendEmailToMe } from "@/lib/server/send-email/send-email"
 
 import { z } from "zod"
+import { checkIfTheSenderEmailIsNotValid } from "@/lib/server/send-email/check-email-is-working"
 export let sendMessageDTO = z.object({
 	name: z
 		.string()
@@ -47,8 +48,6 @@ export async function sendMessage({
 			})
 		}
 
-		console.log("sdjk")
-
 		let senders = schema.senders
 		let messages = schema.messages
 		let sender = (
@@ -75,6 +74,7 @@ export async function sendMessage({
 					message: "You have sent too many messages, please try again later.",
 				})
 			}
+
 			try {
 				await sendEmail({
 					senderName: input.name,
@@ -82,7 +82,18 @@ export async function sendMessage({
 					subject: "Thanks you for reaching out!",
 				})
 			} catch (error) {
-				console.error(error)
+				throw new TRPCError({
+					code: "INTERNAL_SERVER_ERROR",
+					message: "Internal server error, please try again later.",
+				})
+			}
+
+			// await 300ms
+			await new Promise((resolve) => setTimeout(resolve, 300))
+
+			try {
+				await checkIfTheSenderEmailIsNotValid()
+			} catch (error) {
 				throw new TRPCError({
 					code: "BAD_REQUEST",
 					message: "Please provide a working email address",

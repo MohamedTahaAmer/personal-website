@@ -61,5 +61,6 @@ export const sendEmailToMe = async (sendEmailToMe: SendEmailToMe) => {
 		console.log(info)
 	} catch (error) {
 		console.error(error)
+		throw new Error("Failed to send email through SMTP")
 	}
 }

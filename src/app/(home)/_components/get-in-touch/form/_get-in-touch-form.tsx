@@ -12,7 +12,6 @@ import { z } from "zod"
 import FormInput from "./form-input"
 import TextAreaFormInput from "./form-text-area-input"
 import "./input-chrome-reset.css"
-import { env } from "@/env"
 
 const formSchema = z.object({
 	name: z
@@ -44,7 +43,7 @@ export function GetInTouchForm() {
 		},
 		onSuccess: () => {
 			toast.success("Message sent successfully")
-			env.NODE_ENV === "production" && form.reset()
+			form.reset()
 		},
 		onError: (error) => {
 			console.log(error.message)
