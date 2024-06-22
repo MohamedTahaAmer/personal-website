@@ -14,6 +14,7 @@ const Navbar = () => {
 		const navbar = navref.current
 
 		window.addEventListener("scroll", () => {
+			if (window.innerWidth > 640) return
 			if (window.scrollY > lastScrollY) {
 				// Scrolling down
 				navbar.classList.remove("visible-nav")

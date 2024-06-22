@@ -7,6 +7,7 @@ import {
 } from "@/components/ui/sheet"
 import { Menu } from "lucide-react"
 import NavigationLinks from "./navigation-links"
+import MobileNavigationLinks from "./mobile-navigation-links"
 
 const MobileNavigation = () => {
 	return (
@@ -15,14 +16,10 @@ const MobileNavigation = () => {
 				<Menu className="size-6 text-secondary hover:scale-125" />
 			</SheetTrigger>
 			<SheetContent
-				side="left"
-				className="w-2/3 bg-background/10 p-0 backdrop-blur-sm "
+				side="right"
+				className="w-2/3 bg-background/10 p-0 pt-24 backdrop-blur-sm "
 			>
-				<SheetHeader>
-					<SheetDescription className="pt-24">
-						<NavigationLinks className="flex flex-col items-center space-y-4" />
-					</SheetDescription>
-				</SheetHeader>
+				<MobileNavigationLinks className="flex flex-col items-center space-y-4" />
 			</SheetContent>
 		</Sheet>
 	)

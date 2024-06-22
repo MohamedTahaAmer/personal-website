@@ -11,6 +11,7 @@ const AnyTimeSoftware = () => {
 					<a href="https://www.linkedin.com/company/anytime-software">
 						<div className="relative mb-2 aspect-square w-24 overflow-hidden rounded-full">
 							<Image
+								sizes="96px"
 								fill
 								className="object-cover"
 								alt="AnyTime Software Logo"

@@ -12,6 +12,7 @@ export const Logo = () => {
 				<div className="relative aspect-square w-12 overflow-hidden rounded-md">
 					<Image
 						fill
+						sizes="48px"
 						className="object-cover"
 						alt="Mohamed Amer Personal Image"
 						src="/me.png"
