@@ -67,6 +67,7 @@ export async function sendMessage({
 				.where(eq(senders.email, input.email))
 				.groupBy(senders.id)
 		)[0]
+		console.log(sender)
 
 		if (!sender) {
 			let { success } = await ratelimit_3_per_1_day.limit(
@@ -97,8 +98,10 @@ export async function sendMessage({
 				})
 			}
 
-			// await 300ms
-			await new Promise((resolve) => setTimeout(resolve, 1500))
+			let start = performance.now()
+			console.log(start)
+			await new Promise((resolve) => setTimeout(resolve, 5000))
+			console.log(performance.now() - start)
 
 			try {
 				await checkIfTheSenderEmailIsNotValid(messageId)
