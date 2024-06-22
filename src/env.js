@@ -10,6 +10,7 @@ export const env = createEnv({
 		MY_PERSONAL_GMAIL: z.string().email(),
 		UPSTASH_REDIS_REST_URL: z.string().min(1),
 		UPSTASH_REDIS_REST_TOKEN: z.string().min(1),
+		DELAY_BETWEEN_SMTP_AND_IMAP: z.string().default("2500"),
 		NODE_ENV: z
 			.enum(["development", "test", "production"])
 			.default("development"),
@@ -27,6 +28,7 @@ export const env = createEnv({
 		GMAIL_APP_PASSWORD: process.env.GMAIL_APP_PASSWORD,
 		SMTP_GMAIL: process.env.SMTP_GMAIL,
 		MY_PERSONAL_GMAIL: process.env.MY_PERSONAL_GMAIL,
+		DELAY_BETWEEN_SMTP_AND_IMAP: process.env.DELAY_BETWEEN_SMTP_AND_IMAP,
 		NEXT_PUBLIC_CV_LINK: process.env.NEXT_PUBLIC_CV_LINK,
 		NODE_ENV: process.env.NODE_ENV,
 	},

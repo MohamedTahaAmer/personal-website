@@ -15,6 +15,7 @@ import { sendEmail, sendEmailToMe } from "@/lib/server/send-email/send-email"
 
 import { z } from "zod"
 import { checkIfTheSenderEmailIsNotValid } from "@/lib/server/send-email/check-email-is-working"
+import { env } from "@/env"
 export let sendMessageDTO = z.object({
 	name: z
 		.string()
@@ -67,7 +68,6 @@ export async function sendMessage({
 				.where(eq(senders.email, input.email))
 				.groupBy(senders.id)
 		)[0]
-		console.log(sender)
 
 		if (!sender) {
 			let { success } = await ratelimit_3_per_1_day.limit(
@@ -98,10 +98,9 @@ export async function sendMessage({
 				})
 			}
 
-			let start = performance.now()
-			console.log(start)
-			await new Promise((resolve) => setTimeout(resolve, 5000))
-			console.log(performance.now() - start)
+			await new Promise((resolve) =>
+				setTimeout(resolve, +env.DELAY_BETWEEN_SMTP_AND_IMAP),
+			)
 
 			try {
 				await checkIfTheSenderEmailIsNotValid(messageId)

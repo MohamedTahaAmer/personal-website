@@ -31,9 +31,6 @@ export const checkIfTheSenderEmailIsNotValid = async (messageId: string) => {
 		let message = await client.fetchOne(`*`, {
 			envelope: true,
 		})
-		console.log("----------------")
-		console.log("\x1b[1;32m%s\x1b[1;36m", messageId)
-		console.log("\x1b[1;32m%s\x1b[1;36m", message.envelope.inReplyTo)
 		if (message.envelope.inReplyTo === messageId) {
 			console.log("\x1b[1;31m%s\x1b[1;36m", ERROR_EMAIL_NOT_WORKING)
 			throw new Error(ERROR_EMAIL_NOT_WORKING)
