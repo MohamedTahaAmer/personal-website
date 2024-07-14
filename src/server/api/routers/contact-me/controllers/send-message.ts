@@ -23,7 +23,7 @@ export async function sendMessage({ ctx, input }: { ctx: CTX; input: SendMessage
 		let ipv6 = ctx.headers.get("x-forwarded-for") ?? "test"
 		const { success } = await ratelimit_10_per_10_M.limit(ipv6)
 		if (!success) {
-			console.log("\x1b[1;33m%s\x1b[1;36m", `Endpoing Access Rate limit exceeded for ${ipv6}`)
+			console.log("\x1b[1;33m%s\x1b[1;36m", `Access Rate limit exceeded for ${ipv6}`)
 			throw new TRPCError({
 				code: "FORBIDDEN",
 				message: "You have sent too many messages, please try again later.",
