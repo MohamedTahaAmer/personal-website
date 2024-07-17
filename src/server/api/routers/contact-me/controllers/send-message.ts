@@ -47,7 +47,10 @@ export async function sendMessage({ ctx, input }: { ctx: CTX; input: SendMessage
 		if (!sender) {
 			let { success } = await ratelimit_3_per_1_day.limit(`${ipv6}+${input.email}`)
 			if (!success) {
-				console.log("\x1b[1;31m%s\x1b[1;36m", `Same user tring the same non working email too more than 3 times in the same day`)
+				console.log(
+					"\x1b[1;31m%s\x1b[1;36m",
+					`Same user tring the same non working email too more than 3 times in the same day`,
+				)
 				throw new TRPCError({
 					code: "FORBIDDEN",
 					message: "You have sent too many messages, please try again later.",

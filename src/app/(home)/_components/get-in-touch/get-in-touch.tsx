@@ -3,10 +3,12 @@ import { GetInTouchForm } from "./form/_get-in-touch-form"
 
 const GetInTouch = () => {
 	return (
-		<div className=" pt-40 max-md:pt-4" id="contact-me">
+		<div className="pt-40 max-md:pt-4" id="contact-me">
 			<div className="relative">
 				<div className="relative z-10 mx-auto w-fit bg-background px-4">
-					<div className="gradient-text  mb-8 text-center  text-5xl font-bold uppercase tracking-widest max-sm:max-w-[70vw]">Get In Touch</div>
+					<div className="gradient-text mb-8 text-center text-5xl font-bold uppercase tracking-widest max-sm:max-w-[70vw]">
+						Get In Touch
+					</div>
 				</div>
 				<div className="absolute inset-x-0 top-1/2 z-0 grow border-t border-lime-400"></div>
 			</div>

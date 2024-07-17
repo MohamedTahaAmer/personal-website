@@ -12,7 +12,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 	return (
 		<TRPCReactProvider>
 			<Navbar />
-			<div className="pt-[90px] " id="hero">
+			<div className="pt-[90px]" id="hero">
 				{children}
 			</div>
 			<MyToast />

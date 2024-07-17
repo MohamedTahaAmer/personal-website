@@ -5,7 +5,7 @@ const config = {
 	jsxSingleQuote: false,
 	useTabs: true,
 	semi: false,
-	printWidth: 9999,
+	printWidth: 120,
 	trailingComma: "all",
 }
 
