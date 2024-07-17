@@ -5,16 +5,20 @@ import BgImage from "./bg-image"
 
 const Hero = () => {
 	return (
-		<div className="relative min-h-[85vh] sm:pt-8 ">
+		<div className="relative min-h-[85vh] sm:pt-2">
 			<BgImage />
-			<div className="  mx-auto max-w-7xl p-4 text-left sm:pl-12 ">
+			<div className="mx-auto max-w-7xl p-4 text-left sm:pl-12 ">
 				<h1 className="relative text-4xl font-bold leading-tight max-sm:text-3xl">
-					I&apos;m a <span className="gradient-text text-5xl font-bold max-md:text-4xl max-sm:block ">Full-Stack Web Developer</span> <br className="max-sm:hidden" />
+					I&apos;m a{" "}
+					<span className="gradient-text text-5xl font-bold max-md:text-4xl max-sm:block ">
+						Full-Stack Web Developer
+					</span>{" "}
+					<br className="max-sm:hidden" />
 					with more than two years of experience.
 				</h1>
-				<div className="relative w-fit pb-28 pr-16 max-sm:px-4 max-sm:pt-4 sm:ml-16 sm:pt-8 ">
+				<div className="relative w-fit pb-20 pr-16 max-sm:px-4 max-sm:pt-4 sm:ml-16 sm:pt-6 ">
 					<HeroParagraph />
-					<div className="absolute bottom-8 right-0 flex  gap-4 ">
+					<div className="absolute bottom-6 right-0 flex  gap-4 ">
 						<HeroButtons />
 					</div>
 				</div>
