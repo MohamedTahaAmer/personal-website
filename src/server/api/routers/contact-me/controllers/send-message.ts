@@ -14,13 +14,13 @@ export let sendMessageDTO = z.object({
 	email: z.string().email("Please enter a valid email address").max(256, "Email too long (max 256 characters)"),
 	message: z.string().min(1, "Please enter a message").max(4096, "Message too long (max 4096 characters)"),
 })
-type SendMessageDTO = z.infer<typeof sendMessageDTO>
-
 export let sendMessageOutputDto = z.promise(z.void())
+
+type SendMessageDTO = z.infer<typeof sendMessageDTO>
 
 export async function sendMessage({ ctx, input }: { ctx: CTX; input: SendMessageDTO }) {
 	try {
-		let ipv6 = ctx.headers.get("x-forwarded-for") ?? "test"
+		let ipv6 = ctx.req.headers.get("x-forwarded-for") ?? "test"
 		const { success } = await ratelimit_10_per_10_M.limit(ipv6)
 		if (!success) {
 			console.log("\x1b[1;33m%s\x1b[1;36m", `Access Rate limit exceeded for ${ipv6}`)

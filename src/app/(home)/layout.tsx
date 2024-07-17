@@ -1,3 +1,4 @@
+import "@/styles/globals.css"
 import MyToast from "@/components/my-toast"
 import { TRPCReactProvider } from "@/trpc/react"
 import Navbar from "./_components/Navbar"
