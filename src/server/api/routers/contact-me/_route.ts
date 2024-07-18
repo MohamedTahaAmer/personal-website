@@ -1,16 +1,9 @@
 import { createTRPCRouter, publicProcedure } from "@/server/api/trpc"
-import { sendMessage, sendMessageDTO, sendMessageOutputDto } from "./controllers/send-message"
+import { sendMessage, sendMessageAPI, sendMessageDTO, sendMessageOutputDto } from "./send-message"
 
 export const contactMeRouter = createTRPCRouter({
 	sendMessage: publicProcedure
-		.meta({
-			openapi: {
-				method: "POST",
-				path: "/auth/login",
-				tags: ["auth"],
-				summary: "Login as an existing user",
-			},
-		})
+		.meta(sendMessageAPI)
 		.input(sendMessageDTO)
 		.output(sendMessageOutputDto)
 		.mutation(sendMessage),

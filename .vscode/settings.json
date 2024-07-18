@@ -1,8 +1,8 @@
 {
 	"typescript.tsdk": "node_modules/typescript/lib",
-	"editor.glyphMargin": false,
-	"editor.lineNumbers": "off",
-	"editor.minimap.enabled": false,
+	"editor.glyphMargin": true,
+	// "editor.lineNumbers": "off",
+	// "editor.minimap.enabled": false,
 	// "cSpell.enabled": false,
 	"cSpell.words": ["navref"]
 }
