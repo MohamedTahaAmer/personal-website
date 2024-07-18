@@ -11,16 +11,6 @@ import { env } from "@/env"
 import { type CTX } from "../../trpc"
 import type { OpenApiMeta } from "trpc-swagger"
 
-export let sendMessageDTO = z.object({
-	name: z.string().min(1, "Please enter your name").max(256, "Name too long (max 256 characters)"),
-	email: z.string().email("Please enter a valid email address").max(256, "Email too long (max 256 characters)"),
-	message: z.string().min(1, "Please enter a message").max(4096, "Message too long (max 4096 characters)"),
-})
-export let sendMessageOutputDto = z.promise(z.object({ message: z.literal("Message sent successfully") }))
-
-type SendMessageDTO = z.infer<typeof sendMessageDTO>
-type SendMessageOutputDto = z.infer<typeof sendMessageOutputDto>
-
 export let sendMessageAPI: OpenApiMeta = {
 	openapi: {
 		method: "GET",
@@ -29,6 +19,17 @@ export let sendMessageAPI: OpenApiMeta = {
 		summary: "Send a message to me",
 	},
 }
+
+export let sendMessageDTO = z.object({
+	name: z.string().min(1, "Please enter your name").max(256, "Name too long (max 256 characters)"),
+	email: z.string().email("Please enter a valid email address").max(256, "Email too long (max 256 characters)"),
+	message: z.string().min(1, "Please enter a message").max(4096, "Message too long (max 4096 characters)"),
+})
+export let sendMessageOutputDto = z.promise(z.void())
+
+type SendMessageDTO = z.infer<typeof sendMessageDTO>
+
+export type SendMessageOutput = ReturnType<typeof sendMessage>
 
 export async function sendMessage({ ctx, input }: { ctx: CTX; input: SendMessageDTO }) {
 	if (!input.email.endsWith("gmail.com")) {
@@ -66,10 +67,7 @@ export async function sendMessage({ ctx, input }: { ctx: CTX; input: SendMessage
 		if (!sender) {
 			let { success } = await ratelimit_3_per_1_day.limit(`${ipv6}+${input.email}`)
 			if (!success) {
-				console.log(
-					"\x1b[1;31m%s\x1b[1;36m",
-					`Same user trying the same non working email too more than 3 times in the same day`,
-				)
+				console.log("\x1b[1;31m%s\x1b[1;36m", `Same user trying the same non working email too more than 3 times in the same day`)
 				throw new TRPCError({
 					code: "FORBIDDEN",
 					message: "You have sent too many messages, please try again later.",
@@ -159,7 +157,6 @@ export async function sendMessage({ ctx, input }: { ctx: CTX; input: SendMessage
 			})
 			.returning({ id: messages.id })
 		console.log("\x1b[1;32m%s\x1b[1;36m", `Message Created successfully with id: ${message[0]?.id}`)
-		return { message: "Message sent successfully" } as { message: "Message sent successfully" }
 	} catch (error) {
 		if (error instanceof TRPCError) throw error
 

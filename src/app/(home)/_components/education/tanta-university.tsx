@@ -9,13 +9,7 @@ const TantaUniversity = () => {
 				<div className="_title col-span-1 flex h-fit flex-col items-center">
 					<a href="https://eng.tanta.edu.eg/en/">
 						<div className="relative mb-2 aspect-square w-24 overflow-hidden rounded-full">
-							<Image
-								sizes="96px"
-								fill
-								className="object-cover"
-								alt="AnyTime Software Logo"
-								src="/companies/tanta.png"
-							/>
+							<Image sizes="96px" fill className="object-cover" alt="AnyTime Software Logo" src="/companies/tanta.png" />
 						</div>
 					</a>
 					<div className="text-3xl font-bold text-secondary">Tanta University</div>
@@ -31,15 +25,12 @@ const TantaUniversity = () => {
 								<span className={boldTextCss}> Ranked 5th in my class.</span>
 							</li>
 							<li className="">
-								<span className={boldTextCss}>Led a team of 12 members</span> during the graduation project, where I
-								managed task assignments and deadlines, resulting in the{" "}
-								<span className={boldTextCss}>successful completion of the project with excellence.</span>
+								<span className={boldTextCss}>Led a team of 12 members</span> during the graduation project, where I managed task assignments and deadlines,
+								resulting in the <span className={boldTextCss}>successful completion of the project with excellence.</span>
 							</li>
 							<li className="">
-								Served as the{" "}
-								<span className={boldTextCss}>representative for my section of 40 colleagues for three years,</span>{" "}
-								facilitating communication and coordination between professors, teaching assistants, and students,
-								ensuring smooth operations within the academic environment.
+								Served as the <span className={boldTextCss}>representative for my section of 40 colleagues for three years,</span> facilitating communication
+								and coordination between professors, teaching assistants, and students, ensuring smooth operations within the academic environment.
 							</li>
 						</ul>
 					</div>

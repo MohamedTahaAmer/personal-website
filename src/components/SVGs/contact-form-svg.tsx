@@ -362,20 +362,10 @@ const ContactFormSvg = (props: LucideProps) => {
 							<g id="g282">
 								<g id="g280" opacity="0.440002">
 									<g id="g274" opacity="0.440002">
-										<path
-											id="path272"
-											opacity="0.440002"
-											d="M314.124 305.565L191.254 430.069V321.271L206.769 305.565H314.124Z"
-											fill="white"
-										/>
+										<path id="path272" opacity="0.440002" d="M314.124 305.565L191.254 430.069V321.271L206.769 305.565H314.124Z" fill="white" />
 									</g>
 									<g id="g278" opacity="0.440002">
-										<path
-											id="path276"
-											opacity="0.440002"
-											d="M388.697 305.565L191.254 505.613V449.961L333.77 305.565H388.697Z"
-											fill="white"
-										/>
+										<path id="path276" opacity="0.440002" d="M388.697 305.565L191.254 505.613V449.961L333.77 305.565H388.697Z" fill="white" />
 									</g>
 								</g>
 							</g>
@@ -384,20 +374,10 @@ const ContactFormSvg = (props: LucideProps) => {
 							<g id="g302">
 								<g id="g300" opacity="0.440002">
 									<g id="g294" opacity="0.440002">
-										<path
-											id="path292"
-											opacity="0.440002"
-											d="M535.104 332.465V441.249L425.071 552.723H317.715L535.104 332.465Z"
-											fill="white"
-										/>
+										<path id="path292" opacity="0.440002" d="M535.104 332.465V441.249L425.071 552.723H317.715L535.104 332.465Z" fill="white" />
 									</g>
 									<g id="g298" opacity="0.440002">
-										<path
-											id="path296"
-											opacity="0.440002"
-											d="M535.104 461.142V516.794L499.632 552.723H444.716L535.104 461.142Z"
-											fill="white"
-										/>
+										<path id="path296" opacity="0.440002" d="M535.104 461.142V516.794L499.632 552.723H444.716L535.104 461.142Z" fill="white" />
 									</g>
 								</g>
 							</g>
@@ -425,11 +405,7 @@ const ContactFormSvg = (props: LucideProps) => {
 								<path id="path330" d="M362.156 365.9L475.045 298.877V432.924L362.156 365.9Z" fill="#FFAE35" />
 							</g>
 							<g id="g332">
-								<path
-									id="path334"
-									d="M351.209 352.89L249.267 432.924H475.044L373.102 352.89C366.658 347.831 357.652 347.831 351.209 352.89Z"
-									fill="#FFBF69"
-								/>
+								<path id="path334" d="M351.209 352.89L249.267 432.924H475.044L373.102 352.89C366.658 347.831 357.652 347.831 351.209 352.89Z" fill="#FFBF69" />
 							</g>
 						</g>
 						<g id="g348">

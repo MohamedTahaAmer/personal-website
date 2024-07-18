@@ -116,24 +116,9 @@ const MongoDb = (props: LucideProps) => {
 				fill="#DBDAC7"
 				d="M63.977 95.501c.136-.237.31-.463.401-.716l1.294-3.708c.05-.14.201-.244.304-.364l.01 2.78-.931 2.387-1.078-.379z"
 			></path>
-			<path
-				fillRule="evenodd"
-				clipRule="evenodd"
-				fill="#EBE9DC"
-				d="M65.055 95.88l.931-2.387.192 2.824-1.123-.437z"
-			></path>
-			<path
-				fillRule="evenodd"
-				clipRule="evenodd"
-				fill="#CECDB7"
-				d="M66.646 85.554c-.149-.646.099-1.158.547-1.602l.258.176-.805 1.426z"
-			></path>
-			<path
-				fillRule="evenodd"
-				clipRule="evenodd"
-				fill="#4FAA41"
-				d="M64.242 73.542l-.05-.009-.051.008.119-.427-.018.428z"
-			></path>
+			<path fillRule="evenodd" clipRule="evenodd" fill="#EBE9DC" d="M65.055 95.88l.931-2.387.192 2.824-1.123-.437z"></path>
+			<path fillRule="evenodd" clipRule="evenodd" fill="#CECDB7" d="M66.646 85.554c-.149-.646.099-1.158.547-1.602l.258.176-.805 1.426z"></path>
+			<path fillRule="evenodd" clipRule="evenodd" fill="#4FAA41" d="M64.242 73.542l-.05-.009-.051.008.119-.427-.018.428z"></path>
 		</svg>
 	)
 }

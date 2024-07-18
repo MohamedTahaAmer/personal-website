@@ -10,13 +10,7 @@ const Soltech = () => {
 				<div className="_title col-span-1 flex h-fit flex-col items-center">
 					<a href="https://www.linkedin.com/company/soltech-inc/">
 						<div className="relative mb-2 aspect-square w-24 overflow-hidden rounded-full">
-							<Image
-								sizes="96px"
-								fill
-								className="object-cover"
-								alt="AnyTime Software Logo"
-								src="/companies/soltech.jpeg"
-							/>
+							<Image sizes="96px" fill className="object-cover" alt="AnyTime Software Logo" src="/companies/soltech.jpeg" />
 						</div>
 					</a>
 					<div className="text-3xl font-bold text-secondary">Soltech </div>
@@ -54,21 +48,20 @@ const Soltech = () => {
 						<div className="font-bold text-secondary">Day-To-Day:</div>
 						<ul className="list-disc pl-12 max-sm:pl-6">
 							<li className="">
-								Played a pivotal role within a team of five members across two concurrent projects, implementing{" "}
-								<span className={boldTextCss}>SCRUM</span> methodology through
+								Played a pivotal role within a team of five members across two concurrent projects, implementing <span className={boldTextCss}>SCRUM</span>{" "}
+								methodology through
 								<span className={boldTextCss}> JIRA,</span> which led to achieving project completion{" "}
 								<span className={boldTextCss}>two weeks ahead of schedule.</span>
 							</li>
 							<li className="">
-								Executed deployment strategies on <span className={boldTextCss}>AWS,</span> leveraging{" "}
-								<span className={boldTextCss}>EC2</span> instances for hosting, <span className={boldTextCss}>S3</span>{" "}
-								for storage, and <span className={boldTextCss}>RDS </span> for database management, ensuring seamless
-								integration and optimal performance.
+								Executed deployment strategies on <span className={boldTextCss}>AWS,</span> leveraging <span className={boldTextCss}>EC2</span> instances for
+								hosting, <span className={boldTextCss}>S3</span> for storage, and <span className={boldTextCss}>RDS </span> for database management, ensuring
+								seamless integration and optimal performance.
 							</li>
 							<li className="">
-								Orchestrated <span className={boldTextCss}>deployment workflows</span> across three distinct
-								environments <span className={boldTextCss}>(development, quality assurance, and production), </span>{" "}
-								integral to maintaining a seamless <span className={boldTextCss}>CI/CD pipeline</span>
+								Orchestrated <span className={boldTextCss}>deployment workflows</span> across three distinct environments{" "}
+								<span className={boldTextCss}>(development, quality assurance, and production), </span> integral to maintaining a seamless{" "}
+								<span className={boldTextCss}>CI/CD pipeline</span>
 							</li>
 							<li className="">
 								Undertook <span className={boldTextCss}> refactoring and optimization of legacy codebases,</span>
@@ -77,8 +70,8 @@ const Soltech = () => {
 							</li>
 							<li className="">
 								<span className={boldTextCss}>Designed</span> robust database architectures and executed seamless
-								<span className={boldTextCss}> migrations</span> between schemas, ensuring data integrity and
-								compatibility with evolving application requirements.
+								<span className={boldTextCss}> migrations</span> between schemas, ensuring data integrity and compatibility with evolving application
+								requirements.
 							</li>
 						</ul>
 					</div>

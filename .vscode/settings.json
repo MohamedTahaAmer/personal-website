@@ -1,8 +1,8 @@
 {
 	"typescript.tsdk": "node_modules/typescript/lib",
-	"editor.glyphMargin": true,
+	// "editor.glyphMargin": true,
 	// "editor.lineNumbers": "off",
 	// "editor.minimap.enabled": false,
 	// "cSpell.enabled": false,
-	"cSpell.words": ["navref"]
+	"cSpell.words": ["DTOs", "navref"]
 }
