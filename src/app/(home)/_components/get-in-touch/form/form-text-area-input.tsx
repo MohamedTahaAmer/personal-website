@@ -1,4 +1,11 @@
-import { FormControl, FormDescription, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form"
+import {
+	FormControl,
+	FormDescription,
+	FormField,
+	FormItem,
+	FormLabel,
+	FormMessage,
+} from "@/components/ui/form"
 import { Textarea } from "@/components/ui/textarea"
 import { type formSchemaType, type Form } from "./_get-in-touch-form"
 import { cn } from "@/lib/utils"
@@ -27,7 +34,10 @@ const TextAreaFormInput = ({
 			render={() => (
 				<FormItem className="relative space-y-0">
 					<FormLabel
-						className={cn("absolute left-0 top-0 z-10 -translate-y-1/2 bg-background px-2", isError ? "text-destructive" : "text-secondary-foreground")}
+						className={cn(
+							"absolute left-0 top-0 z-10 -translate-y-1/2 bg-background px-2",
+							isError ? "text-destructive" : "text-secondary-foreground",
+						)}
 					>
 						{label}
 					</FormLabel>

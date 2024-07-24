@@ -11,7 +11,9 @@ export const env = createEnv({
 		UPSTASH_REDIS_REST_URL: z.string().min(1),
 		UPSTASH_REDIS_REST_TOKEN: z.string().min(1),
 		DELAY_BETWEEN_SMTP_AND_IMAP: z.string().default("2500"),
-		NODE_ENV: z.enum(["development", "test", "production"]).default("development"),
+		NODE_ENV: z
+			.enum(["development", "test", "production"])
+			.default("development"),
 	},
 
 	client: {

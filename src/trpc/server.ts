@@ -1,6 +1,10 @@
 import "server-only"
 
-import { createTRPCProxyClient, loggerLink, TRPCClientError } from "@trpc/client"
+import {
+	createTRPCProxyClient,
+	loggerLink,
+	TRPCClientError,
+} from "@trpc/client"
 import { callProcedure } from "@trpc/server"
 import { observable } from "@trpc/server/observable"
 import { type TRPCErrorResponse } from "@trpc/server/rpc"
@@ -34,7 +38,9 @@ export const api = createTRPCProxyClient<AppRouter>({
 	transformer,
 	links: [
 		loggerLink({
-			enabled: (op) => process.env.NODE_ENV === "development" || (op.direction === "down" && op.result instanceof Error),
+			enabled: (op) =>
+				process.env.NODE_ENV === "development" ||
+				(op.direction === "down" && op.result instanceof Error),
 		}),
 		/**
 		 * Custom RSC link that lets us invoke procedures without using http requests. Since Server

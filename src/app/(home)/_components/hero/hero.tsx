@@ -9,7 +9,10 @@ const Hero = () => {
 			<BgImage />
 			<div className="mx-auto max-w-7xl p-4 text-left sm:pl-12">
 				<h1 className="relative text-4xl font-bold leading-tight max-sm:text-3xl">
-					I&apos;m a <span className="gradient-text text-5xl font-bold max-md:text-4xl max-sm:block">Full-Stack Web Developer</span>{" "}
+					I&apos;m a{" "}
+					<span className="gradient-text text-5xl font-bold max-md:text-4xl max-sm:block">
+						Full-Stack Web Developer
+					</span>{" "}
 					<br className="max-sm:hidden" />
 					with more than two years of experience.
 				</h1>

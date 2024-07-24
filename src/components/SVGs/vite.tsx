@@ -3,7 +3,15 @@ const Vite = (props: LucideProps) => {
 	return (
 		<svg {...props} viewBox="0 0 128 128">
 			<defs>
-				<linearGradient id="a" x1="6" x2="235" y1="33" y2="344" gradientTransform="translate(0 .937) scale(.3122)" gradientUnits="userSpaceOnUse">
+				<linearGradient
+					id="a"
+					x1="6"
+					x2="235"
+					y1="33"
+					y2="344"
+					gradientTransform="translate(0 .937) scale(.3122)"
+					gradientUnits="userSpaceOnUse"
+				>
 					<stop offset="0" stopColor="#41d1ff"></stop>
 					<stop offset="1" stopColor="#bd34fe"></stop>
 				</linearGradient>

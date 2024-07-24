@@ -21,7 +21,10 @@ export const checkIfTheSenderEmailIsNotValid = async (messageId: string) => {
 
 	try {
 		if (typeof client.mailbox !== "object") {
-			console.log("\x1b[1;31m%s\x1b[1;36m", "Can't access the mailbox of this email")
+			console.log(
+				"\x1b[1;31m%s\x1b[1;36m",
+				"Can't access the mailbox of this email",
+			)
 			throw new Error("Can't access the mailbox of this email")
 		}
 
@@ -35,6 +38,9 @@ export const checkIfTheSenderEmailIsNotValid = async (messageId: string) => {
 	} finally {
 		lock.release()
 		await client.logout()
-		console.log("\x1b[1;33m%s\x1b[1;36m", "Released the IMAP lock and logged out")
+		console.log(
+			"\x1b[1;33m%s\x1b[1;36m",
+			"Released the IMAP lock and logged out",
+		)
 	}
 }

@@ -2,10 +2,18 @@
 // https://orm.drizzle.team/docs/sql-schema-declaration
 
 import { relations, sql } from "drizzle-orm"
-import { pgTableCreator, serial, timestamp, uuid, varchar } from "drizzle-orm/pg-core"
+import {
+	pgTableCreator,
+	serial,
+	timestamp,
+	uuid,
+	varchar,
+} from "drizzle-orm/pg-core"
 import { env } from "@/env"
 
-export const createTable = pgTableCreator((name) => `${env.DATABASE_PREFIX}${name}`)
+export const createTable = pgTableCreator(
+	(name) => `${env.DATABASE_PREFIX}${name}`,
+)
 
 export const senders = createTable("sender", {
 	id: serial("id").primaryKey(),

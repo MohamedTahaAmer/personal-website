@@ -34,7 +34,10 @@ export const sendEmail = async (sendEmailPayload: SendEmailPayload) => {
 
 	try {
 		const info = await transporter.sendMail(mailOptions)
-		console.log("\x1b[1;32m%s\x1b[1;36m", `Thanks Email sent to: ${info.envelope.to[0]}`)
+		console.log(
+			"\x1b[1;32m%s\x1b[1;36m",
+			`Thanks Email sent to: ${info.envelope.to[0]}`,
+		)
 		return info.messageId
 	} catch (error) {
 		console.log("\x1b[1;31m%s\x1b[1;36m", "Failed to send email through SMTP")
@@ -60,7 +63,10 @@ export const sendEmailToMe = async (sendEmailToMe: SendEmailToMe) => {
 
 	try {
 		await transporter.sendMail(mailOptions)
-		console.log("\x1b[1;32m%s\x1b[1;36m", `Email sent to me with message from ${sendEmailToMe.email}`)
+		console.log(
+			"\x1b[1;32m%s\x1b[1;36m",
+			`Email sent to me with message from ${sendEmailToMe.email}`,
+		)
 	} catch (error) {
 		console.log("\x1b[1;31m%s\x1b[1;36m", "Failed to send email through SMTP")
 		throw new Error("Failed to send email through SMTP")

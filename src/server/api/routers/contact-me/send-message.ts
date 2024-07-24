@@ -1,8 +1,15 @@
-import { ratelimit_10_per_10_M, ratelimit_3_per_1_H, ratelimit_3_per_1_day } from "@/lib/server/upstash-rate-limit"
+import {
+	ratelimit_10_per_10_M,
+	ratelimit_3_per_1_H,
+	ratelimit_3_per_1_day,
+} from "@/lib/server/upstash-rate-limit"
 import { TRPCError } from "@trpc/server"
 import { schema } from "@/server/db"
 import { eq, sql } from "drizzle-orm"
-import { ERROR_EMAIL_NOT_WORKING, MAX_NUMBER_OF_MESSAGES_PER_EMAIL } from "@/lib/constants"
+import {
+	ERROR_EMAIL_NOT_WORKING,
+	MAX_NUMBER_OF_MESSAGES_PER_EMAIL,
+} from "@/lib/constants"
 import { sendEmail, sendEmailToMe } from "@/lib/server/send-email/send-email"
 
 import { z } from "zod"
@@ -21,9 +28,18 @@ export let sendMessageAPI: OpenApiMeta = {
 }
 
 export let sendMessageDTO = z.object({
-	name: z.string().min(1, "Please enter your name").max(256, "Name too long (max 256 characters)"),
-	email: z.string().email("Please enter a valid email address").max(256, "Email too long (max 256 characters)"),
-	message: z.string().min(1, "Please enter a message").max(4096, "Message too long (max 4096 characters)"),
+	name: z
+		.string()
+		.min(1, "Please enter your name")
+		.max(256, "Name too long (max 256 characters)"),
+	email: z
+		.string()
+		.email("Please enter a valid email address")
+		.max(256, "Email too long (max 256 characters)"),
+	message: z
+		.string()
+		.min(1, "Please enter a message")
+		.max(4096, "Message too long (max 4096 characters)"),
 })
 export let sendMessageOutputDto = z.promise(z.void())
 
@@ -31,7 +47,13 @@ type SendMessageDTO = z.infer<typeof sendMessageDTO>
 
 export type SendMessageOutput = ReturnType<typeof sendMessage>
 
-export async function sendMessage({ ctx, input }: { ctx: CTX; input: SendMessageDTO }) {
+export async function sendMessage({
+	ctx,
+	input,
+}: {
+	ctx: CTX
+	input: SendMessageDTO
+}) {
 	if (!input.email.endsWith("gmail.com")) {
 		console.log(input.email)
 		throw new TRPCError({
@@ -43,7 +65,10 @@ export async function sendMessage({ ctx, input }: { ctx: CTX; input: SendMessage
 		let ipv6 = ctx.req.headers.get("x-forwarded-for") ?? "Non browser request"
 		const { success } = await ratelimit_10_per_10_M.limit(ipv6)
 		if (!success) {
-			console.log("\x1b[1;33m%s\x1b[1;36m", `Access Rate limit exceeded for ${ipv6}`)
+			console.log(
+				"\x1b[1;33m%s\x1b[1;36m",
+				`Access Rate limit exceeded for ${ipv6}`,
+			)
 			throw new TRPCError({
 				code: "FORBIDDEN",
 				message: "You have sent too many messages, please try again later.",
@@ -65,9 +90,14 @@ export async function sendMessage({ ctx, input }: { ctx: CTX; input: SendMessage
 		)[0]
 
 		if (!sender) {
-			let { success } = await ratelimit_3_per_1_day.limit(`${ipv6}+${input.email}`)
+			let { success } = await ratelimit_3_per_1_day.limit(
+				`${ipv6}+${input.email}`,
+			)
 			if (!success) {
-				console.log("\x1b[1;31m%s\x1b[1;36m", `Same user trying the same non working email too more than 3 times in the same day`)
+				console.log(
+					"\x1b[1;31m%s\x1b[1;36m",
+					`Same user trying the same non working email too more than 3 times in the same day`,
+				)
 				throw new TRPCError({
 					code: "FORBIDDEN",
 					message: "You have sent too many messages, please try again later.",
@@ -88,12 +118,17 @@ export async function sendMessage({ ctx, input }: { ctx: CTX; input: SendMessage
 				})
 			}
 
-			await new Promise((resolve) => setTimeout(resolve, +env.DELAY_BETWEEN_SMTP_AND_IMAP))
+			await new Promise((resolve) =>
+				setTimeout(resolve, +env.DELAY_BETWEEN_SMTP_AND_IMAP),
+			)
 
 			try {
 				await checkIfTheSenderEmailIsNotValid(messageId)
 			} catch (error) {
-				if (error instanceof Error && error.message === ERROR_EMAIL_NOT_WORKING) {
+				if (
+					error instanceof Error &&
+					error.message === ERROR_EMAIL_NOT_WORKING
+				) {
 					throw new TRPCError({
 						code: "BAD_REQUEST",
 						message: "Please provide valid email address",
@@ -110,7 +145,10 @@ export async function sendMessage({ ctx, input }: { ctx: CTX; input: SendMessage
 					})
 					.returning({ id: senders.id })
 			)[0]
-			console.log("\x1b[1;32m%s\x1b[1;36m", `Sender Created successfully with id: ${newSender?.id}`)
+			console.log(
+				"\x1b[1;32m%s\x1b[1;36m",
+				`Sender Created successfully with id: ${newSender?.id}`,
+			)
 
 			sender = {
 				id: newSender?.id!,
@@ -120,7 +158,10 @@ export async function sendMessage({ ctx, input }: { ctx: CTX; input: SendMessage
 
 		// - this is a life time rate limit, for which I'm using the main db to get the count of messages sent by specific email, unlike other temporary rate limits, for which I'm using upstash
 		if (sender.messageCount >= MAX_NUMBER_OF_MESSAGES_PER_EMAIL) {
-			console.log("\x1b[1;33m%s\x1b[1;36m", "Email exceeded the limit of messages")
+			console.log(
+				"\x1b[1;33m%s\x1b[1;36m",
+				"Email exceeded the limit of messages",
+			)
 			throw new TRPCError({
 				code: "FORBIDDEN",
 				message: "You have sent too many messages",
@@ -156,7 +197,10 @@ export async function sendMessage({ ctx, input }: { ctx: CTX; input: SendMessage
 				senderId: sender.id,
 			})
 			.returning({ id: messages.id })
-		console.log("\x1b[1;32m%s\x1b[1;36m", `Message Created successfully with id: ${message[0]?.id}`)
+		console.log(
+			"\x1b[1;32m%s\x1b[1;36m",
+			`Message Created successfully with id: ${message[0]?.id}`,
+		)
 	} catch (error) {
 		if (error instanceof TRPCError) throw error
 
