@@ -4,11 +4,8 @@ const HeroParagraph = () => {
 		<ul className="max-w-xl text-xl leading-relaxed">
 			<li className="">
 				Worked across <span className="font-bold text-secondary">all layers</span> of modern web development ranging from{" "}
-				<span className="font-bold text-secondary">
-					building user interfaces to <span className="font-bold text-secondary">backend</span>
-					development
-				</span>{" "}
-				and <span className="font-bold text-secondary">creating CI/CD pipelines.</span>
+				<span className="font-bold text-secondary">building user interfaces</span> to <span className="font-bold text-secondary">backend development </span> and{" "}
+				<span className="font-bold text-secondary">creating CI/CD pipelines.</span>
 			</li>
 			<li className="mt-4">
 				I focus on <span className="font-bold text-secondary-foreground">performance</span> and{" "}
