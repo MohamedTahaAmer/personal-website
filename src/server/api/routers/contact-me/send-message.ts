@@ -9,16 +9,6 @@ import { z } from "zod"
 import { checkIfTheSenderEmailIsNotValid } from "@/lib/server/send-email/check-email-is-working"
 import { env } from "@/env"
 import { type CTX } from "../../trpc"
-import type { OpenApiMeta } from "trpc-swagger"
-
-export let sendMessageAPI: OpenApiMeta = {
-	openapi: {
-		method: "GET",
-		path: "/send-message",
-		tags: ["Messages"],
-		summary: "Send a message to me",
-	},
-}
 
 export let sendMessageDTO = z.object({
 	name: z.string().min(1, "Please enter your name").max(256, "Name too long (max 256 characters)"),
@@ -40,7 +30,7 @@ export async function sendMessage({ ctx, input }: { ctx: CTX; input: SendMessage
 		})
 	}
 	try {
-		let ipv6 = ctx.req.headers.get("x-forwarded-for") ?? "Non browser request"
+		let ipv6 = ctx.headers.get("x-forwarded-for") ?? "Non browser request"
 		const { success } = await ratelimit_10_per_10_M.limit(ipv6)
 		if (!success) {
 			console.log("\x1b[1;33m%s\x1b[1;36m", `Access Rate limit exceeded for ${ipv6}`)

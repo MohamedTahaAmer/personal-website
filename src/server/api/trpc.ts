@@ -6,13 +6,11 @@
  * TL;DR - This is where all the tRPC server stuff is created and plugged in. The pieces you will
  * need to use are documented accordingly near the end.
  */
-
-import { initTRPC, TRPCError } from "@trpc/server"
+import { initTRPC } from "@trpc/server"
 import superjson from "superjson"
 import { ZodError } from "zod"
-import { db } from "../db"
-import type { OpenApiMeta } from "trpc-swagger"
-import type { FetchCreateContextFnOptions } from "@trpc/server/adapters/fetch"
+
+import { db } from "@/server/db"
 
 /**
  * 1. CONTEXT
@@ -26,37 +24,41 @@ import type { FetchCreateContextFnOptions } from "@trpc/server/adapters/fetch"
  *
  * @see https://trpc.io/docs/server/context
  */
-export const createTRPCContext = async (opts: FetchCreateContextFnOptions) => {
+export const createTRPCContext = async (opts: { headers: Headers }) => {
 	return {
 		db,
-		// here we spreading only one property 'headers', we can get it explicitly, then pass it without spreading
 		...opts,
 	}
 }
+
 export type CTX = Awaited<ReturnType<typeof createTRPCContext>>
 
 /**
  * 2. INITIALIZATION
  *
  * This is where the tRPC API is initialized, connecting the context and transformer. We also parse
- * ZodErrors so that you get typesafe on the frontend if your procedure fails due to validation
+ * ZodErrors so that you get typesafety on the frontend if your procedure fails due to validation
  * errors on the backend.
  */
-const t = initTRPC
-	.context<typeof createTRPCContext>()
-	.meta<OpenApiMeta>()
-	.create({
-		transformer: superjson,
-		errorFormatter({ shape, error }) {
-			return {
-				...shape,
-				data: {
-					...shape.data,
-					zodError: error.cause instanceof ZodError ? error.cause.flatten() : null,
-				},
-			}
-		},
-	})
+const t = initTRPC.context<typeof createTRPCContext>().create({
+	transformer: superjson,
+	errorFormatter({ shape, error }) {
+		return {
+			...shape,
+			data: {
+				...shape.data,
+				zodError: error.cause instanceof ZodError ? error.cause.flatten() : null,
+			},
+		}
+	},
+})
+
+/**
+ * Create a server-side caller.
+ *
+ * @see https://trpc.io/docs/server/server-side-calls
+ */
+export const createCallerFactory = t.createCallerFactory
 
 /**
  * 3. ROUTER & PROCEDURE (THE IMPORTANT BIT)
@@ -71,4 +73,12 @@ const t = initTRPC
  * @see https://trpc.io/docs/router
  */
 export const createTRPCRouter = t.router
+
+/**
+ * Public (unauthenticated) procedure
+ *
+ * This is the base piece you use to build new queries and mutations on your tRPC API. It does not
+ * guarantee that a user querying is authorized, but you can still access user session data if they
+ * are logged in.
+ */
 export const publicProcedure = t.procedure
