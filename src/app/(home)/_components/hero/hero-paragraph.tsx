@@ -8,8 +8,8 @@ const HeroParagraph = () => {
 				<span className="font-bold text-secondary">creating CI/CD pipelines.</span>
 			</li>
 			<li className="mt-4">
-				I aim to create the best user experience possible by focusing on <span className="font-bold text-secondary-foreground">performance</span> and{" "}
-				<span className="font-bold text-secondary-foreground">accessibility</span> best practices.
+				I aim to create the best user experience possible by focusing on <span className="font-bold text-secondary-foreground">performance optimization</span>{" "}
+				and <span className="font-bold text-secondary-foreground">accessibility</span> best practices.
 			</li>
 			<li className="pt-4">
 				Experienced in the complete software development <br />

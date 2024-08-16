@@ -46,7 +46,7 @@ const Upwork = () => {
 						</div>
 					</div>
 					<div className="pb-24">
-						<div className="font-bold text-secondary">Day-To-Day:</div>
+						<div className="font-bold text-secondary">Day To Day:</div>
 						<ul className="list-disc pl-12 max-sm:pl-6">
 							<li className="">
 								Implemented new React features including <span className={boldTextCss}>Server Components </span> and

@@ -7,7 +7,7 @@ const Hero = () => {
 	return (
 		<div className="relative min-h-[85vh] sm:pt-2">
 			<BgImage />
-			<div className="mx-auto max-w-7xl p-4 text-left sm:pl-12">
+			<div className="relative z-10 mx-auto max-w-7xl p-4 text-left sm:pl-12">
 				<h1 className="text-4xl font-bold leading-tight max-sm:text-3xl">
 					<span className="gradient-text text-5xl font-bold max-md:text-4xl max-sm:block">Full-Stack Web Developer</span>{" "}
 				</h1>
@@ -17,10 +17,9 @@ const Hero = () => {
 						<HeroButtons />
 					</div>
 				</div>
-
-				<div className="absolute bottom-0 right-0 flex gap-4 max-sm:hidden">
-					<TechnologiesMarquee />
-				</div>
+			</div>
+			<div className="absolute bottom-0 right-0 flex gap-4 max-sm:hidden">
+				<TechnologiesMarquee />
 			</div>
 		</div>
 	)

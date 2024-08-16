@@ -51,7 +51,7 @@ const Soltech = () => {
 						</div>
 					</div>
 					<div className="pb-24">
-						<div className="font-bold text-secondary">Day-To-Day:</div>
+						<div className="font-bold text-secondary">Day To Day:</div>
 						<ul className="list-disc pl-12 max-sm:pl-6">
 							<li className="">
 								Played a pivotal role within a team of five members across two concurrent projects, implementing <span className={boldTextCss}>SCRUM</span>{" "}

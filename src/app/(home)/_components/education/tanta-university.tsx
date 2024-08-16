@@ -16,7 +16,7 @@ const TantaUniversity = () => {
 				</div>
 				<div className="col-span-2 text-xl">
 					<div className="text-2xl font-bold text-secondary-foreground decoration-secondary/40 underline-offset-4 max-sm:mb-2 max-sm:underline">
-						&gt; Bachelor degree in Electrical Engineering and Automation Control.
+						&gt; Bachelor degree in Computer Science.
 					</div>
 					<div className="pb-24">
 						<ul className="list-disc pl-12 max-sm:pl-6">
@@ -26,6 +26,10 @@ const TantaUniversity = () => {
 							<li className="">
 								<span className={boldTextCss}>Led a team of 12 members</span> during the graduation project, where I managed task assignments and deadlines,
 								resulting in the <span className={boldTextCss}>successful completion of the project with excellence.</span>
+							</li>
+							<li className="">
+								<span className={boldTextCss}>Organized online and offline study sessions </span> to share my knowledge with my peers and help them with
+								exercise and exam preparation.
 							</li>
 							<li className="">
 								Served as the <span className={boldTextCss}>representative for my section of 40 colleagues for three years,</span> facilitating communication
