@@ -17,7 +17,7 @@ import PostMan from "@/components/SVGs/post-man"
 import Postgres from "@/components/SVGs/postgres"
 import Prisma from "@/components/SVGs/prisma"
 import Python from "@/components/SVGs/python"
-import Radis from "@/components/SVGs/radis"
+import Redis from "@/components/SVGs/redis"
 import React from "@/components/SVGs/react"
 import ReactRouter from "@/components/SVGs/react-router"
 import Redux from "@/components/SVGs/redux"
@@ -27,7 +27,7 @@ import Trpc from "@/components/SVGs/trpc"
 import Ts from "@/components/SVGs/ts"
 import Vite from "@/components/SVGs/vite"
 import Vitest from "@/components/SVGs/vitest"
-const TechnologiesIcnos = () => {
+const TechIcons = () => {
 	return (
 		<>
 			<NextJsSVG className="w-20 p-4" />
@@ -49,7 +49,7 @@ const TechnologiesIcnos = () => {
 			<Postgres className="w-20 p-4" />
 			<Prisma className="w-20 p-4" />
 			<Python className="w-20 p-4" />
-			<Radis className="w-20 p-4" />
+			<Redis className="w-20 p-4" />
 			<ReactRouter className="w-20 p-4" />
 			<React className="w-20 p-4" />
 			<Redux className="w-20 p-4" />
@@ -63,4 +63,4 @@ const TechnologiesIcnos = () => {
 	)
 }
 
-export default TechnologiesIcnos
+export default TechIcons

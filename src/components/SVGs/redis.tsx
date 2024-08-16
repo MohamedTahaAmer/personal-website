@@ -1,5 +1,5 @@
 import type { LucideProps } from "lucide-react"
-const Radis = (props: LucideProps) => {
+const Redis = (props: LucideProps) => {
 	return (
 		<svg {...props} viewBox="0 0 128 128">
 			<path
@@ -38,4 +38,4 @@ const Radis = (props: LucideProps) => {
 	)
 }
 
-export default Radis
+export default Redis

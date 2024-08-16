@@ -11,6 +11,7 @@
 		"db:studio": "drizzle-kit studio",
 		"format": "prettier --write .",
 		"dev": "next dev",
+		"dev:wifi": "next dev -H 192.168.1.106 --experimental-https",
 		"dev:t": "next dev --turbo",
 		"test": "vitest",
 		"lint": "next lint",

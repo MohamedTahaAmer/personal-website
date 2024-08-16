@@ -14,7 +14,7 @@ const AnyTimeSoftware = () => {
 						</div>
 					</a>
 					<div className="text-3xl font-bold text-secondary">AnyTime Software</div>
-					<div className="text-xl font-bold text-secondary-foreground/80">April 2024 - June 2024</div>
+					<div className="text-xl font-bold text-secondary-foreground/80">April 2024 - Present</div>
 				</div>
 				<div className="col-span-2 text-xl">
 					<div className="text-3xl font-bold text-secondary-foreground decoration-secondary/40 underline-offset-4 max-sm:mb-2 max-sm:text-xl max-sm:underline">
@@ -24,6 +24,11 @@ const AnyTimeSoftware = () => {
 						<span className="font-bold text-secondary">Fields: </span>
 						Marketing, cold emails automation.
 					</div>
+					<p className="py-2">
+						<span className="ml-8" />I am leading a team of 4 developers in a remote environment. The team is responsible for creating the user interface and
+						the backend of a web application that automates the process of finding leads and creating marketing campaigns that utilize cold emails, LinkedIn,
+						Instagram, and Facebook messages.
+					</p>
 					<div className="">
 						<div className="font-bold text-secondary">Technologies:</div>
 						<div className="my-2 flex flex-wrap gap-1 whitespace-nowrap pl-12 text-base font-bold max-sm:pl-6">
@@ -48,7 +53,7 @@ const AnyTimeSoftware = () => {
 						</div>
 					</div>
 					<div className="pb-24">
-						<div className="font-bold text-secondary">Day-To-Day:</div>
+						<div className="font-bold text-secondary">Day To Day:</div>
 						<ul className="list-disc pl-12 max-sm:pl-6">
 							<li className="">
 								Collaborated on building large-scale backend applications using <span className={boldTextCss}>Nest.JS</span> along with{" "}

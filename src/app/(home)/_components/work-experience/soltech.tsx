@@ -24,6 +24,12 @@ const Soltech = () => {
 						<span className="font-bold text-secondary">Fields: </span>
 						Medical, Legal, and Low Enforcement Software Development.
 					</div>
+					<p className="py-2">
+						<span className="ml-8" />
+						SOLTECH is a software house, in which I worked on different projects that span various fields and technologies. I have grown from a junior developer
+						to leading a team of 5 developers, working directly with product managers, capturing client&apos;s needs, determining the technologies used, and
+						setting up project schedules with milestones and deadlines.
+					</p>
 					<div className="">
 						<div className="font-bold text-secondary">Technologies:</div>
 						<div className="my-2 flex flex-wrap gap-1 whitespace-nowrap pl-12 text-base font-bold max-sm:pl-6">

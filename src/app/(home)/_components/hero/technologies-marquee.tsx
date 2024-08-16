@@ -1,10 +1,10 @@
-import TechnologiesIcnos from "./technologies-icnos"
+import TechIcons from "./tech-icons"
 const TechnologiesMarquee = () => {
 	return (
 		<div className="mt-20 overflow-hidden">
 			<div className="marquee bg-primary">
 				<div className="marquee-content">
-					<TechnologiesIcnos />
+					<TechIcons />
 				</div>
 			</div>
 		</div>

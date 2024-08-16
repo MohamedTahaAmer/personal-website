@@ -1,7 +1,7 @@
 # MohamedAmer.tech
 
 <div style="text-align: center;">
-  <img src="https://res.cloudinary.com/dqe9ksk0p/image/upload/v1719053210/Personal-Website/xtbn9rtpx2aivlbkxrz9.png" alt="demo image">
+  <img src="https://utfs.io/f/d02497bf-e108-4785-8615-e467f9cf1d93-iiudtj.jpg" alt="demo image">
 </div>
 
 ## 🌎 Live Demo
@@ -30,7 +30,7 @@ These are some features that are implemented in the website:
 - [x] ☎️ SMTP and IMAP integration for sending and receiving emails.
 - [x] 👓 Glass-looking Navbar, that hides on scroll down and shows on scroll up.
 - [x] 🎉 Marquee of moving Technologies Icons.
-- [x] 📢 Accessable user Notifications with Sonner.
+- [x] 📢 Accessible user Notifications with Sonner.
 - [x] 📦 Postgres DB hosted on Supabase.
 - [x] 🌎 Hosting using serverless architecture with Vercel.
 

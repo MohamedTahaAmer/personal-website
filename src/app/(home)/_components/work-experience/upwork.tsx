@@ -20,6 +20,11 @@ const Upwork = () => {
 					<div className="text-3xl font-bold text-secondary-foreground decoration-secondary/40 underline-offset-4 max-sm:mb-2 max-sm:text-xl max-sm:underline">
 						&gt; Full Stack Web Developer
 					</div>
+					<p className="py-2">
+						<span className="ml-8" />
+						As a Full Stack freelancer on UpWork, I&apos;ve worked on diverse projects with different technologies. This includes collaborating with clients to
+						understand their needs, planning development strategies, and delivering high-quality solutions within tight deadlines.
+					</p>
 					<div className="">
 						<div className="font-bold text-secondary">Technologies:</div>
 						<div className="my-2 flex flex-wrap gap-1 whitespace-nowrap pl-12 text-base font-bold max-sm:pl-6">
