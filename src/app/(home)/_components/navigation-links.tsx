@@ -7,7 +7,7 @@ interface NavigationLinksProps {
 }
 
 export let navLinks = [
-	{ name: "Home", href: "/#hero" },
+	{ name: "About", href: "/#hero" },
 	{ name: "Work", href: "/#work" },
 	{ name: "Projects", href: "/#projects" },
 	{ name: "Blog", href: "/#blog" },
